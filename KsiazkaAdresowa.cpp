@@ -2,7 +2,7 @@
 
 KsiazkaAdresowa::KsiazkaAdresowa()
 {
-    string nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
+    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
 }
 
 string KsiazkaAdresowa::wczytajLinie()

@@ -23,6 +23,7 @@ class UzytkownikManager
     bool czyIstniejeLogin(string login);
 
 public:
+    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();

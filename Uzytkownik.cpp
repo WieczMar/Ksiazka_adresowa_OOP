@@ -10,7 +10,7 @@ void Uzytkownik::ustawLogin(string nowyLogin)
     login = nowyLogin;
 }
 
-void Uzytkownik::ustawHsalo(string noweHaslo)
+void Uzytkownik::ustawHaslo(string noweHaslo)
 {
     haslo = noweHaslo;
 }

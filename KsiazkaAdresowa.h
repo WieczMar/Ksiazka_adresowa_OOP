@@ -14,6 +14,7 @@ class KsiazkaAdresowa
     int idUsunietegoAdresata;
 
 public:
+    KsiazkaAdresowa();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();

@@ -24,7 +24,7 @@ Uzytkownik UzytkownikManager::podajDaneNowegoUzytkownika()
     } while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
     cout << "Podaj haslo: ";
-    uzytkownik.ustawHsalo(MetodyPomocnicze::wczytajLinie());
+    uzytkownik.ustawHaslo(MetodyPomocnicze::wczytajLinie());
 
     return uzytkownik;
 }
@@ -59,4 +59,9 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
         }
     }
     return false;
+}
+
+void UzytkownikManager::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikzUzytkownikami.wczytajUzytkownikowZPliku();
 }

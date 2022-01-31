@@ -14,7 +14,9 @@ class KsiazkaAdresowa
     int idUsunietegoAdresata;
 
 public:
-    KsiazkaAdresowa();
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami) {
+    uzytkownikManager.wczytajUzytkownikowZPliku();
+    };
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();

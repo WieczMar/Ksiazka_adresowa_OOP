@@ -1,10 +1,5 @@
 #include "PlikzUzytkownikami.h"
 
-PlikzUzytkownikami::PlikzUzytkownikami()
-{
-    nazwaPlikuZUzytkownikami = "Uzytkownicy.txt";
-}
-
 void PlikzUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
 {
     string liniaZDanymiUzytkownika = "";

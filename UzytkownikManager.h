@@ -23,6 +23,7 @@ class UzytkownikManager
     bool czyIstniejeLogin(string login);
 
 public:
+    UzytkownikManager(string nazwaPlikuZUzytkownikami): plikzUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();

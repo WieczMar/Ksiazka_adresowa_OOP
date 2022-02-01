@@ -21,6 +21,7 @@ class UzytkownikManager
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
+    int ustawIdUzytkownika();
 
 public:
     UzytkownikManager(string nazwaPlikuZUzytkownikami): plikzUzytkownikami(nazwaPlikuZUzytkownikami) {};
@@ -28,6 +29,8 @@ public:
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
+    void zmianaHaslaZalogowanegoUzytkownika();
+    int wylogowanieUzytkownika();
 
 };
 

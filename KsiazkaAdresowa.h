@@ -10,11 +10,9 @@ using namespace std;
 class KsiazkaAdresowa
 {
     UzytkownikManager uzytkownikManager;
-    int idOstatniegoAdresata;
-    int idUsunietegoAdresata;
 
 public:
-    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami) : uzytkownikManager(nazwaPlikuZUzytkownikami) {
+    KsiazkaAdresowa(string nazwaPlikuZUzytkownikami, string nazwaPlikuZAdresatami) : uzytkownikManager(nazwaPlikuZUzytkownikami, nazwaPlikuZAdresatami) {
     uzytkownikManager.wczytajUzytkownikowZPliku();
     };
     void rejestracjaUzytkownika();
@@ -22,6 +20,8 @@ public:
     void wypiszWszystkichUzytkownikow();
     void zmianaHaslaZalogowanegoUzytkownika();
     void wylogowanieUzytkownika();
+    void wypiszWszystkichAdresatowZalogowanegoUzytkownika();
+    void dodajAdresataZalogowanegoUzytkownika();
 };
 
 #endif

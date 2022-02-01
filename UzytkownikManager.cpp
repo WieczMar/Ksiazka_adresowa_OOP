@@ -5,7 +5,7 @@ void UzytkownikManager::rejestracjaUzytkownika()
     Uzytkownik uzytkownik = podajDaneNowegoUzytkownika();
 
     uzytkownicy.push_back(uzytkownik);
-    plikzUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
+    plikZUzytkownikami.dopiszUzytkownikaDoPliku(uzytkownik);
 
     cout << endl << "Konto zalozono pomyslnie" << endl << endl;
     system("pause");
@@ -63,7 +63,7 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
 
 void UzytkownikManager::wczytajUzytkownikowZPliku()
 {
-    uzytkownicy = plikzUzytkownikami.wczytajUzytkownikowZPliku();
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
 }
 
 void UzytkownikManager::logowanieUzytkownika()
@@ -122,10 +122,38 @@ void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
             system("pause");
         }
     }
-    plikzUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+    plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
 }
 
 int UzytkownikManager::wylogowanieUzytkownika()
 {
     idZalogowanegoUzytkownika = 0;
+    cout << "Wylogowano uzytkownika." << endl;
+    system("pause");
+}
+
+void UzytkownikManager::wypiszWszystkichAdresatowZalogowanegoUzytkownika()
+{
+    if(idZalogowanegoUzytkownika == 0)
+    {
+        cout << "Uzytkownik jest niezalogowany." << endl;
+    }
+    else
+    {
+        AdresatManager adresatManager(nazwaPlikuZAdresatami, idZalogowanegoUzytkownika);
+        adresatManager.wypiszWszystkichAdresatowZalogowanegoUzytkownika();
+    }
+}
+
+void UzytkownikManager::dodajAdresataZalogowanegoUzytkownika()
+{
+    if(idZalogowanegoUzytkownika == 0)
+    {
+        cout << "Uzytkownik jest niezalogowany." << endl;
+    }
+    else
+    {
+        AdresatManager adresatManager(nazwaPlikuZAdresatami, idZalogowanegoUzytkownika);
+        adresatManager.dodajAdresata();
+    }
 }

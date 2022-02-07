@@ -11,6 +11,7 @@ class MetodyPomocnicze
 {
 public:
     static string wczytajLinie();
+    static char wczytajZnak();
     static string konwersjaIntNaString(int liczba);
     static int konwersjaStringNaInt(string liczba);
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);

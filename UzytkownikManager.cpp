@@ -61,17 +61,7 @@ bool UzytkownikManager::czyIstniejeLogin(string login)
     return false;
 }
 
-void UzytkownikManager::wczytajUzytkownikowZPliku()
-{
-    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
-}
-
 void UzytkownikManager::logowanieUzytkownika()
-{
-   idZalogowanegoUzytkownika = ustawIdUzytkownika();
-}
-
-int UzytkownikManager::ustawIdUzytkownika()
 {
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
@@ -91,20 +81,21 @@ int UzytkownikManager::ustawIdUzytkownika()
 
                 if (itr -> pobierzHaslo() == haslo)
                 {
+                    idZalogowanegoUzytkownika = itr -> pobierzId();
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    return itr -> pobierzId();
+                    return;
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return;
 }
 
 void UzytkownikManager::zmianaHaslaZalogowanegoUzytkownika()
@@ -132,28 +123,15 @@ int UzytkownikManager::wylogowanieUzytkownika()
     system("pause");
 }
 
-void UzytkownikManager::wypiszWszystkichAdresatowZalogowanegoUzytkownika()
+bool UzytkownikManager::czyUzytkownikJestZalogowany()
 {
-    if(idZalogowanegoUzytkownika == 0)
-    {
-        cout << "Uzytkownik jest niezalogowany." << endl;
-    }
+    if (idZalogowanegoUzytkownika > 0)
+        return true;
     else
-    {
-        AdresatManager adresatManager(nazwaPlikuZAdresatami, idZalogowanegoUzytkownika);
-        adresatManager.wypiszWszystkichAdresatowZalogowanegoUzytkownika();
-    }
+        return false;
 }
 
-void UzytkownikManager::dodajAdresataZalogowanegoUzytkownika()
+int UzytkownikManager::pobierzIdZalogowanegoUzytkownika()
 {
-    if(idZalogowanegoUzytkownika == 0)
-    {
-        cout << "Uzytkownik jest niezalogowany." << endl;
-    }
-    else
-    {
-        AdresatManager adresatManager(nazwaPlikuZAdresatami, idZalogowanegoUzytkownika);
-        adresatManager.dodajAdresata();
-    }
+        return idZalogowanegoUzytkownika;
 }

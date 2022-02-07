@@ -23,20 +23,21 @@ class UzytkownikManager
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();
     bool czyIstniejeLogin(string login);
-    int ustawIdUzytkownika();
 
 public:
-    UzytkownikManager(string nazwaPlikuZUzytkownikami, string pobranaNazwaPlikuZAdresatami): plikZUzytkownikami(nazwaPlikuZUzytkownikami) {
-    nazwaPlikuZAdresatami = pobranaNazwaPlikuZAdresatami;
+    UzytkownikManager(string nazwaPlikuZUzytkownikami)
+        : plikZUzytkownikami(nazwaPlikuZUzytkownikami)
+    {
+        idZalogowanegoUzytkownika = 0;
+        uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
     };
-    void wczytajUzytkownikowZPliku();
     void rejestracjaUzytkownika();
     void logowanieUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void zmianaHaslaZalogowanegoUzytkownika();
     int wylogowanieUzytkownika();
-    void wypiszWszystkichAdresatowZalogowanegoUzytkownika();
-    void dodajAdresataZalogowanegoUzytkownika();
+    bool czyUzytkownikJestZalogowany();
+    int pobierzIdZalogowanegoUzytkownika();
 
 };
 

@@ -18,7 +18,6 @@ class UzytkownikManager
     int idZalogowanegoUzytkownika;
     PlikZUzytkownikami plikZUzytkownikami;
     vector <Uzytkownik> uzytkownicy;
-    string nazwaPlikuZAdresatami;
 
     Uzytkownik podajDaneNowegoUzytkownika();
     int pobierzIdNowegoUzytkownika();

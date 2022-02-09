@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <cstdlib>
+#include <stdio.h>
 
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
@@ -22,6 +23,8 @@ class PlikZAdresatami
     Adresat pobierzDaneAdresata(string daneAdresataOddzielonePionowymiKreskami);
     string pobierzLiczbe(string tekst, int pozycjaZnaku);
     string zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat);
+    void usunPlik(string nazwaPlikuZRozszerzeniem);
+    void zmienNazwePliku(string nazwaTymczasowegoPlikuZRozszerzeniem, string nazwaPlikuZRozszerzeniem);
 
 public:
     PlikZAdresatami(string nazwaPlikuZAdresatami)
@@ -31,6 +34,8 @@ public:
     };
     bool dopiszAdresataDoPliku(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
+    void usunAdresataWPliku(int idUsuwanegoAdresata);
+    void edytujAdresataWPliku(Adresat edytowanyAdresat);
     int pobierzIdOstatniegoAdresata();
 
 };

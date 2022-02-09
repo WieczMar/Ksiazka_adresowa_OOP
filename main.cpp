@@ -13,7 +13,7 @@ int main()
 
     while (true)
     {
-        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany() == 0)
+        if (!ksiazkaAdresowa.czyUzytkownikJestZalogowany())
         {
             wybor = wybierzOpcjeZMenuGlownego();
 
@@ -44,28 +44,19 @@ int main()
                 ksiazkaAdresowa.dodajAdresataZalogowanegoUzytkownika();
                 break;
             case '2':
-                //wyszukajAdresatowPoImieniu(adresaci);
-                cout << "Opcja chwilowo niedostepna" << endl;
-                system("pause");
+                ksiazkaAdresowa.wyszkajAdresatowPoImieniu();
                 break;
             case '3':
-                //wyszukajAdresatowPoNazwisku(adresaci);
-                cout << "Opcja chwilowo niedostepna" << endl;
-                system("pause");
+                ksiazkaAdresowa.wyszkajAdresatowPoNazwisku();
                 break;
             case '4':
                 ksiazkaAdresowa.wypiszWszystkichAdresatowZalogowanegoUzytkownika();
                 break;
             case '5':
-                //idUsunietegoAdresata = usunAdresata(adresaci);
-                //idOstatniegoAdresata = podajIdOstatniegoAdresataPoUsunieciuWybranegoAdresata(idUsunietegoAdresata, idOstatniegoAdresata);
-                cout << "Opcja chwilowo niedostepna" << endl;
-                system("pause");
+                ksiazkaAdresowa.usunAdresata();
                 break;
             case '6':
-                //edytujAdresata(adresaci);
-                cout << "Opcja chwilowo niedostepna" << endl;
-                system("pause");
+                ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();

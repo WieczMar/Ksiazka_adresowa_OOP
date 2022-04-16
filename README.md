@@ -8,7 +8,7 @@ All users account data and recipients data are saved in two separate text files.
 <br />
 <br />
 Sample screen: <br />
-![alt text](https://raw.githubusercontent.com/WieczMar/OOP_Ksiazka_adresowa/main/README_images/MENU_sample.png)
+![alt text](https://raw.githubusercontent.com/WieczMar/OOP_Ksiazka_adresowa/master/README_images/MENU_sample.png)
 <br />
 Unified Modeling Language diagram for this program: <br />
-![alt text](https://raw.githubusercontent.com/WieczMar/OOP_Ksiazka_adresowa/main/README_images/UML_diagram.png)
+![alt text](https://raw.githubusercontent.com/WieczMar/OOP_Ksiazka_adresowa/master/README_images/UML_diagram.png)
